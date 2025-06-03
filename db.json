@@ -1,0 +1,4 @@
+{
+  "users": [],
+  "posts": [{ "id": 1, "title": "Test Post", "author": "User" }]
+}
