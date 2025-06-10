@@ -1,4 +1,119 @@
 {
-  "users": [],
-  "posts": [{ "id": 1, "title": "Test Post", "author": "User" }]
+  "users": [
+    {
+      "email": "kynonoxik@mailinator.com",
+      "password": "$2a$10$nbBX5X.urajYw/Ttm2W6H.4WOWX2rr4s0s2oJnDDrGOO96ROBYX7C",
+      "name": "Elvis Mccarty",
+      "id": 1
+    },
+    {
+      "email": "dsa@g.co",
+      "password": "$2a$10$IJWWlkWKIdYvunPWwm8x1uIHBO9zYojwQTQ1GHAWcSiyyIcnLEZTC",
+      "name": "dss",
+      "id": 2
+    },
+    {
+      "email": "fukocac@mailinator.com",
+      "password": "$2a$10$2pJfGI56jTdYRlr4gkEAMOTFlCgBQO.6fN6mnBrD4MLu0sZRAfhE2",
+      "name": "Hashim Skinner",
+      "id": 3
+    },
+    {
+      "email": "lavyqas@mailinator.com",
+      "password": "$2a$10$5CsimBEdZaVnfv6wlta.hOL0m4MgZNc0kbVPXTQaAk0aoYktwirUq",
+      "name": "Thane Hardin",
+      "id": 4
+    },
+    {
+      "email": "webivefa@mailinator.com",
+      "password": "$2a$10$znKSyKAhOZ/oN0Evcyh4OehxqO1WzEkhpA6DJoRuMD0S0RSeJbewy",
+      "name": "Herrod Graves",
+      "id": 5
+    },
+    {
+      "email": "gubemy@mailinator.com",
+      "password": "$2a$10$luy41/1.mYOlXx5bFsoVBuHgwx50Nn4.puzMF9jiL.//S6.uHEXn2",
+      "name": "Josiah Patel",
+      "id": 6
+    },
+    {
+      "email": "tidiri@mailinator.com",
+      "password": "$2a$10$BDmtb2fZawbpVe0OPwsDO.02VcJKqlS4TfEqlUwU2Si36XyiAV3aW",
+      "name": "Clare Hendrix",
+      "id": 7
+    },
+    {
+      "email": "ti@mailinator.com",
+      "password": "$2a$10$aBBrr/ItZiNG5S/QClPk2./9bgHmysEcJHoLVlXZU7tvEzlOMTmDi",
+      "name": "Clare Hendri",
+      "id": 8
+    },
+    {
+      "email": "tihj@mailinator.com",
+      "password": "$2a$10$D6i3354UTD7.e2oRFgPVA.0exBPs9lqOhMk.MOORBlSPr.ZMlIfQe",
+      "name": "Clare Hendri",
+      "id": 9
+    },
+    {
+      "email": "tihjd@mailinator.com",
+      "password": "$2a$10$UEdL493YZE/URzle3PV97e.RLgfigOAsqTTUv5YVUREzfqxsYwAD2",
+      "name": "Clare Hendri",
+      "id": 10
+    },
+    {
+      "email": "zyxepelola@mailinator.com",
+      "password": "$2a$10$zhzZbia2B6ulgJgM/D7QreKd.xMYpPM8Lrhi.mmeAhZnHpV3uJmim",
+      "name": "Kuame Monroe",
+      "id": 11
+    },
+    {
+      "email": "rijopal@mailinator.com",
+      "password": "$2a$10$G2WKc7VvRmcJdYT3a1B85u2mjl7enOIrC2HFDZnrT4JuWuCBxb7um",
+      "name": "Zoe Barron",
+      "id": 12
+    }
+  ],
+  "posts": [
+    {
+      "title": "Sed excepturi quae n",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Jh1EJsuyn2S-UCopbkfUkamRf4TAgNxweg&s",
+      "content": "Sunt occaecat conseq",
+      "id": 1
+    },
+    {
+      "title": "Sint deserunt veniam",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Jh1EJsuyn2S-UCopbkfUkamRf4TAgNxweg&s",
+      "content": "Est veritatis eu et",
+      "authorId": 12,
+      "id": 2
+    },
+    {
+      "title": "ssssssssssss",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Jh1EJsuyn2S-UCopbkfUkamRf4TAgNxweg&s",
+      "content": "Non assumenda dolor ",
+      "authorId": 11,
+      "id": 4
+    },
+    {
+      "title": "aaaaaaaaaaaaaaa",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Jh1EJsuyn2S-UCopbkfUkamRf4TAgNxweg&s",
+      "content": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "authorId": 11,
+      "id": 5
+    },
+    {
+      "title": "fsdfdfdsfdsfdsfdsfdsdsadsadsad",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Jh1EJsuyn2S-UCopbkfUkamRf4TAgNxweg&s",
+      "content": "asddddddddddddddddddddddddddddfdsfwdfdfvdsfdsfdsfdfdsfcdsfdscdsadsadsadsafdsfdsffffffffffffdsdasd",
+      "authorId": 11,
+      "id": 6
+    },
+    {
+      "title": "aaaaaaaaaaaaaa",
+      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT-Jh1EJsuyn2S-UCopbkfUkamRf4TAgNxweg&s",
+      "content": "ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss",
+      "authorId": 11,
+      "id": 7
+    }
+  ]
 }

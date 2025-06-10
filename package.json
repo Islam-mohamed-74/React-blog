@@ -1,5 +1,5 @@
 {
-  "name": "project-react",
+  "name": "project-test",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -7,14 +7,19 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server db.json -m ./node_modules/json-server-auth",
+    "server-nodemon": "nodemon --watch db.json --exec \"json-server --watch db.json --port 3000 --middlewares ./node_modules/json-server-auth\""
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.8",
     "axios": "^1.9.0",
+    "jwt-decode": "^4.0.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-router": "^7.6.1",
+    "react-hook-form": "^7.57.0",
+    "react-router": "^7.6.2",
+    "react-toastify": "^11.0.5",
     "tailwindcss": "^4.1.8"
   },
   "devDependencies": {
@@ -27,7 +32,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "globals": "^16.0.0",
-    "json-server": "^1.0.0-beta.3",
+    "json-server": "^0.17.4",
     "json-server-auth": "^2.1.0",
     "vite": "^6.3.5"
   }
