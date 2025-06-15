@@ -11,6 +11,17 @@ import { useEffect, useState } from "react";
 import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 
+// If using Vite:
+const API_URL =
+  import.meta.env.MODE === "production"
+    ? "https://your-json-server.railway.app"
+    : "http://localhost:3000";
+
+// If using Create React App, use this instead:
+// const API_URL = process.env.REACT_APP_NODE_ENV === 'production'
+//   ? 'https://your-json-server.railway.app'
+//   : 'http://localhost:3000';
+
 function App() {
   const [user, setUser] = useState(0);
   const [users, setUsers] = useState([]);
