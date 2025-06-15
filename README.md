@@ -1,12 +1,28 @@
-# React + Vite
+React Blog
+A blog platform where users can sign in, create posts, and edit/delete their own posts.
+Technologies
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React
+Tailwind CSS
+DaisyUI
+Axios
+React-Toastify
+React Router
+JSON Server Auth
 
-Currently, two official plugins are available:
+Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+User authentication with JSON Server Auth
+Create, edit, and delete posts for authenticated users
+Responsive design with Tailwind CSS and DaisyUI
+Toast notifications for user actions using React-Toastify
 
-## Expanding the ESLint configuration
+Installation
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Clone the repository: git clone https://github.com/Islam-mohamed-74/React-Blog
+Install dependencies: npm install
+Run JSON Server: npx json-server-auth db.json
+Run the app: npm start
+
+Live Demo
+View Live Demo 
