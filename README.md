@@ -24,5 +24,5 @@ Install dependencies: npm install
 Run JSON Server: npx json-server-auth db.json
 Run the app: npm start
 
-Live Demo
+Live Demo https://react-blog-theta-vert.vercel.app/
 View Live Demo 
