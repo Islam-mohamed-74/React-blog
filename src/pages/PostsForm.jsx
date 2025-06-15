@@ -1,5 +1,7 @@
+"use client";
+
 import axios from "axios";
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router";
 import { toast } from "react-toastify";
@@ -60,10 +62,6 @@ export default function PostsForm(props) {
     },
   };
 
-  // const handleErrors = (errors) => {
-  //   console.error(errors);
-  // };
-
   const editPost = async (data) => {
     try {
       const token = localStorage.getItem("token");
@@ -115,93 +113,228 @@ export default function PostsForm(props) {
   };
 
   return (
-    <div className="flex capitalize min-h-full flex-col justify-center px-6 py-12 lg:px-8">
-      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
-        <img
-          className="mx-auto h-10 w-auto"
-          src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=600"
-          alt="Your Company"
-        />
-        <h2 className="mt-10 text-center text-2xl/9 capitalize font-bold tracking-tight text-gray-900">
-          {mode === "add" ? "Create new post" : "Edit post"}
+    <div className="min-h-screen bg-gray-50 flex flex-col justify-center py-12 px-6 sm:px-6 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-2xl">
+        <div className="text-center">
+          <h1 className="text-3xl font-bold text-gray-900 mb-2">Wordcraft</h1>
+          <p className="text-sm text-gray-500">Global Stories & Articles</p>
+        </div>
+        <h2 className="mt-8 text-center text-3xl font-extrabold text-gray-900">
+          {mode === "add" ? "Create New Article" : "Edit Article"}
         </h2>
+        <p className="mt-2 text-center text-sm text-gray-600">
+          {mode === "add"
+            ? "Share your story with the world"
+            : "Update your article content"}
+        </p>
       </div>
-      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form className="space-y-6" onSubmit={handleSubmit(handlePosts)}>
-          <div>
-            <label
-              htmlFor="title"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Title
-            </label>
-            <div className="mt-2">
-              <input
-                type="text"
-                name="title"
-                id="title"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                {...register("title", newPost.title)}
-              />
-              {errors.title && (
-                <p className="text-red-500 text-xs m-1 normal-case">
-                  {errors.title.message}
+
+      <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-2xl">
+        <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
+          <form className="space-y-6" onSubmit={handleSubmit(handlePosts)}>
+            {/* Title Field */}
+            <div>
+              <label
+                htmlFor="title"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Article Title
+              </label>
+              <div className="mt-1">
+                <input
+                  id="title"
+                  name="title"
+                  type="text"
+                  placeholder="Enter a compelling title for your article"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"
+                  {...register("title", newPost.title)}
+                />
+                {errors.title && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {errors.title.message}
+                  </p>
+                )}
+              </div>
+            </div>
+
+            {/* Image URL Field */}
+            <div>
+              <label
+                htmlFor="url"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Featured Image URL
+              </label>
+              <div className="mt-1">
+                <input
+                  id="url"
+                  name="url"
+                  type="url"
+                  placeholder="https://example.com/image.jpg"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm"
+                  {...register("url", newPost.url)}
+                />
+                {errors.url && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {errors.url.message}
+                  </p>
+                )}
+                <p className="mt-1 text-xs text-gray-500">
+                  Add a high-quality image that represents your article
                 </p>
-              )}
+              </div>
+            </div>
+
+            {/* Content Field */}
+            <div>
+              <label
+                htmlFor="content"
+                className="block text-sm font-medium text-gray-700"
+              >
+                Article Content
+              </label>
+              <div className="mt-1">
+                <textarea
+                  id="content"
+                  name="content"
+                  rows={6}
+                  placeholder="Write your article content here. Share your thoughts, insights, and stories..."
+                  className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-black focus:border-black sm:text-sm resize-vertical"
+                  {...register("content", newPost.content)}
+                />
+                {errors.content && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {errors.content.message}
+                  </p>
+                )}
+                <p className="mt-1 text-xs text-gray-500">
+                  Write between 10-100 characters to give readers a preview of
+                  your article
+                </p>
+              </div>
+            </div>
+
+            {/* Action Buttons */}
+            <div className="flex cursor-pointer items-center justify-between space-x-4">
+              <button
+                type="button"
+                onClick={() => navigate("/post")}
+                className="flex-1 cursor-pointer flex justify-center py-2 px-4 border border-gray-300 rounded-full shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+              >
+                Cancel
+              </button>
+              <button
+                type="submit"
+                className="flex-1 cursor-pointer flex justify-center py-2 px-4 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-black hover:bg-gray-800 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-black"
+              >
+                {mode === "add" ? (
+                  <>
+                    <svg
+                      className="w-4 h-4 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 4v16m8-8H4"
+                      />
+                    </svg>
+                    Create Article
+                  </>
+                ) : (
+                  <>
+                    <svg
+                      className="w-4 h-4 mr-2"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M5 13l4 4L19 7"
+                      />
+                    </svg>
+                    Update Article
+                  </>
+                )}
+              </button>
+            </div>
+          </form>
+
+          {/* Preview Section */}
+          <div className="mt-8 pt-8 border-t border-gray-200">
+            <h3 className="text-lg font-medium text-gray-900 mb-4">
+              Writing Tips
+            </h3>
+            <div className="grid md:grid-cols-2 gap-4 text-sm text-gray-600">
+              <div className="space-y-2">
+                <div className="flex items-start space-x-2">
+                  <svg
+                    className="w-4 h-4 text-green-500 mt-0.5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>Use a clear, descriptive title</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <svg
+                    className="w-4 h-4 text-green-500 mt-0.5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>Choose high-quality images</span>
+                </div>
+              </div>
+              <div className="space-y-2">
+                <div className="flex items-start space-x-2">
+                  <svg
+                    className="w-4 h-4 text-green-500 mt-0.5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>Write engaging content</span>
+                </div>
+                <div className="flex items-start space-x-2">
+                  <svg
+                    className="w-4 h-4 text-green-500 mt-0.5"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                      clipRule="evenodd"
+                    />
+                  </svg>
+                  <span>Keep it concise and clear</span>
+                </div>
+              </div>
             </div>
           </div>
-          <div>
-            <label
-              htmlFor="url"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Image URL
-            </label>
-            <div className="mt-2">
-              <input
-                type="url"
-                name="url"
-                id="url"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6"
-                {...register("url", newPost.url)}
-              />
-              {errors.url && (
-                <p className="text-red-500 text-xs m-1 normal-case">
-                  {errors.url.message}
-                </p>
-              )}
-            </div>
-          </div>
-          <div>
-            <label
-              htmlFor="description"
-              className="block text-sm/6 font-medium text-gray-900"
-            >
-              Description
-            </label>
-            <div className="mt-2">
-              <textarea
-                name="description"
-                id="description"
-                className="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 focus:outline-2 focus:-outline-offset-2 focus:outline-indigo-600 sm:text-sm/6 min-h-28 max-h-40"
-                {...register("content", newPost.content)}
-              />
-              {errors.content && (
-                <p className="text-red-500 text-xs m-1 normal-case">
-                  {errors.content.message}
-                </p>
-              )}
-            </div>
-          </div>
-          <div>
-            <button
-              type="submit"
-              className="flex w-full justify-center cursor-pointer rounded-md bg-indigo-600 px-3 py-1.5 text-sm/6 font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-            >
-              {mode === "add" ? "Create" : "Update"}
-            </button>
-          </div>
-        </form>
+        </div>
       </div>
     </div>
   );

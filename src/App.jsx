@@ -12,7 +12,7 @@ import { jwtDecode } from "jwt-decode";
 import axios from "axios";
 
 function App() {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(0);
   const [users, setUsers] = useState([]);
   const navigate = useNavigate();
   const token = localStorage.getItem("token");
@@ -60,7 +60,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home user={user} />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          <Route path="/register" element={<Signup />} />
           <Route path="/post" element={<Post users={users} user={user} />} />
           <Route path="/post/new" element={<PostsForm user={user} />} />
           <Route path="/post/:id" element={<PostsForm user={user} />} />

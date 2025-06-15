@@ -2,19 +2,16 @@ import React from "react";
 
 export default function HeroSection() {
   return (
-    <div class="hero min-h-[90vh]  ">
-      <div class="text-center pt-10">
-        <div class="badge badge-outline badge-lg">Hello!</div>
-        <h1 class="text-4xl md:text-5xl xl:text-7xl font-semibold brightness-150">
-          I'm <span class="text-primary">Islam,</span>
-          <br />
-          Digital Marketer & Founder
+    <main className="max-w-7xl mx-auto px-4 max-h-[90vh]">
+      <div className="py-20 md:py-32 text-center">
+        <h1 className="text-6xl md:text-8xl font-bold text-gray-400 leading-tight mb-8">
+          Global Stories
+          <br />& Articles
         </h1>
+        <p className="text-xl text-gray-500 max-w-md mx-auto">
+          A place to read, write, and deepen your understanding
+        </p>
       </div>
-
-      {/* <img src="" alt="Antonio" class="max-w-xs md:max-w-lg mt-4 absolute" /> */}
-
-      {/* <img src="" alt="error" height="{500}" width="{700}" /> */}
-    </div>
+    </main>
   );
 }
