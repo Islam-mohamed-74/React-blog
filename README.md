@@ -9,7 +9,7 @@ Axios
 React-Toastify
 React Router
 JSON Server Auth
-
+![preview](./image.jpg)
 Features
 
 User authentication with JSON Server Auth
